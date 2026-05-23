@@ -8,13 +8,14 @@ def style_background_home():
         <style>
 
                 .stApp {
-                    background: #5865F2 !important;
+                    background: linear-gradient(to bottom, #E0E3FF, #B8C6DB) !important;
                 }
 
                 .stApp div[data-testid="stColumn"]{
-                    background-color:#E0E3FF !important;
+                    background-color: rgba(255, 255, 255, 0.9) !important;
                     padding:2.5rem !important;
-                    border-radius: 5rem !important;
+                    border-radius: 2rem !important;
+                    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
                     }
         </style>  
 
@@ -28,7 +29,7 @@ def style_background_dashboard():
         <style>
 
                 .stApp {
-                    background: #E0E3FF !important;
+                    background: linear-gradient(to bottom, #F7F9FC, #E0E3FF) !important;
                 }
 
         </style>  
@@ -37,7 +38,6 @@ def style_background_dashboard():
             ,unsafe_allow_html=True)
     
 
-    
 
 def style_base_layout():
 # asdasd
@@ -63,7 +63,7 @@ def style_base_layout():
                 line-height:1.1 1important;
                 margin-bottom:0rem !important;
             }
-                
+                 
 
             h2 {
                 font-family: 'Climate Crisis', sans-serif !important;
@@ -78,35 +78,45 @@ def style_base_layout():
                 
 
             button{
-                border-radius: 1.5rem !important;
-                background-color: #5865F2 !important;
+                border-radius: 2rem !important;
+                background: linear-gradient(45deg, #A8DADC, #457B9D) !important;
                 color: white !important;
-                padding: 10px 20px !important;
+                padding: 12px 24px !important;
                 border: none !important;
-                transition: transform 0.25s ease-in-out !important;
+                transition: all 0.3s ease !important;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+                font-weight: 600 !important;
                 }
 
             button[kind="secondary"]{
-                border-radius: 1.5rem !important;
-                background-color: #EB459E !important;
+                border-radius: 2rem !important;
+                background: linear-gradient(45deg, #F4A261, #E76F51) !important;
                 color: white !important;
-                padding: 10px 20px !important;
+                padding: 12px 24px !important;
                 border: none !important;
-                transition: transform 0.25s ease-in-out !important;
+                transition: all 0.3s ease !important;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+                font-weight: 600 !important;
                 }
 
             button[kind="tertiary"]{
-                border-radius: 1.5rem !important;
-                background-color: black !important;
+                border-radius: 2rem !important;
+                background: linear-gradient(45deg, #A8DADC, #457B9D) !important;
                 color: white !important;
-                padding: 10px 20px !important;
+                padding: 12px 24px !important;
                 border: none !important;
-                transition: transform 0.25s ease-in-out !important;
+                transition: all 0.3s ease !important;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+                font-weight: 600 !important;
                 }
 
             button:hover{
-                transform :scale(1.05)}
+                transform: scale(1.05) !important;
+                box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+                }
         </style>  
 
                 """
             ,unsafe_allow_html=True)
+    
+

@@ -1,11 +1,15 @@
 import streamlit as st
+
 def subject_card(name, code, section, stats=None, footer_callback=None):
     html = f"""
-        <div style="background:white; border-left: 8px solid #EB459E; padding:25px; border-radius: 20px; border: 1px solid black; margin-bottom:20px;">
-        <h3 style="margin:0; color: #1e293b; font-size: 1.5rem ">{name}</h3>
-        <p style="color:#64748b; margin:10px 0;">Code : <span style="background:#E0E3FF; color:#5865F2; padding:2px 8px; border-radius:5px;">{code} </span> | Section : {section}</p>
-        
-        """
+        <div style="background: linear-gradient(180deg, #ffffff 0%, #f7f8ff 100%); padding:24px; border-radius:24px; border:1px solid rgba(148,163,184,0.18); box-shadow:0 18px 38px rgba(15,23,42,0.08); margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:flex-start;">
+                <div>
+                    <h3 style="margin:0; color:#0f172a; font-size:1.5rem;">{name}</h3>
+                    <p style="color:#475569; margin:0.75rem 0 0; font-size:0.98rem;">Code: <span style="background:#e0efff; color:#1d4ed8; padding:5px 10px; border-radius:999px;">{code}</span> &nbsp;|&nbsp; Section: {section}</p>
+                </div>
+            </div>
+    """
     
     if stats:
         html+= """

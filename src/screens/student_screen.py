@@ -22,7 +22,7 @@ def student_dashboard():
         header_dashboard()
     with c2:
         st.subheader(f"""Welcome, {student_data['name']} """)
-        if st.button("Logout", type='secondary', key='loginbackbtn', shortcut="control+backspace"):
+        if st.button("Logout", type='secondary', key='student_logout', shortcut="control+backspace"):
             st.session_state['is_logged_in'] = False
             del st.session_state.student_data 
             st.rerun()
@@ -34,7 +34,7 @@ def student_dashboard():
     with c1:
         st.header('Your Enrolled Subjects')
     with c2:
-        if st.button('Enroll in Subject', type='primary', width='stretch'):
+        if st.button('Enroll in Subject', type='primary', width='stretch', key='student_enroll_subject'):
             enroll_dialog()
 
 
@@ -67,7 +67,7 @@ def student_dashboard():
 
         stats = stats_map.get(sid,{"total":0, "attended": 0} )
         def unenroll_button():
-                if st.button("Unenroll from this course", type='tertiary', width='stretch', icon=':material/delete_forever:'):
+                if st.button("Unenroll from this course", type='tertiary', width='stretch', icon=':material/delete_forever:', key=f'unenroll_{sid}'):
                     unenroll_student_to_subject(student_id, sid)
                     st.toast(f'Unenrolled from {sub['name']} successfully!')
                     st.rerun()
@@ -102,10 +102,11 @@ def student_screen():
     with c1:
         header_dashboard()
     with c2:
-        if st.button("Go back to Home", type='secondary', key='loginbackbtn', shortcut="control+backspace"):
+        if st.button("Go back to Home", type='secondary', key='student_goback_home', shortcut="control+backspace"):
             st.session_state['login_type'] = None
             st.rerun()
 
+    st.markdown("<div class='section-card'><p style='margin:0; color:#475569;'>Use your face to login instantly and access your enrolled subjects, attendance history, and profile settings.</p></div>", unsafe_allow_html=True)
     st.header('Login using FaceID', text_alignment='center')
     st.space()
     st.space()
